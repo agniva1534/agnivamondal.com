@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agniva Mondal | Data Analyst | Healthcare & Pharma Analytics</title>
+    <meta name="description"
+        content="Portfolio of Agniva Mondal - Data Science Researcher at Purdue University specializing in Data Analytics, Healthcare Insights, and Business Intelligence">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .nav-link,
+        .btn {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #2dd4bf;
+            /* Teal-400 */
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #2dd4bf;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .skill-card,
+        .project-card,
+        .feature-card,
+        .timeline-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover,
+        .project-card:hover,
+        .feature-card:hover,
+        .timeline-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #2dd4bf 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-gradient {
+            background: #ffffff;
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0d9488 0%, #0f172a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background-color: #0d9488;
+            color: white;
+        }
+
+        .project-card.hidden {
+            display: none;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #0d9488, #14b8a6);
+        }
+
+        .experience-timeline-line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #0d9488;
+        }
+
+        .experience-date {
+            font-size: 2.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            color: #2dd4bf;
+            /* Teal-400 */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            min-width: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            white-space: normal;
+            margin-top: 0;
+            text-align: left;
+        }
+
+        /* Liquid Glass Theme Styles */
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow:
+                0 4px 30px rgba(0, 0, 0, 0.1),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+        }
+
+        .experience-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow:
+                0 8px 40px rgba(0, 0, 0, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .checkmark-icon {
+            color: #22c55e;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .skill-badge {
+            border: 2px solid #0d9488;
+            color: #0d9488;
+            background: #f0fdfa;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 4rem 0;
+            }
+
+            .timeline-line {
+                left: 15px;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Background Animations */
+        .animated-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            /* Enforce 16:10 Aspect Ratio */
+            min-width: 100vw;
+            min-height: 100vh;
+            aspect-ratio: 16/10;
+            z-index: -1;
+            background-image: url('assets/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Ensure aspect ratio logic holds by overriding/setting correct dimensions via media queries if aspect-ratio support is shaky or logic needs to be cover-based */
+        @media (min-aspect-ratio: 16/10) {
+            .animated-bg {
+                width: 100vw;
+                height: 62.5vw;
+                /* 100 / 1.6 */
+            }
+        }
+
+        @media (max-aspect-ratio: 16/10) {
+            .animated-bg {
+                width: 160vh;
+                /* 100 * 1.6 */
+                height: 100vh;
+            }
+        }
+
+        /* Dark overlay for better text readability */
+        .animated-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, #14b8a6, #0d9488);
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #0d9488, #0f172a);
+            bottom: -150px;
+            right: -150px;
+            animation-delay: 5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #f0fdfa, #e0f2fe);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(50px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-50px, 50px) scale(0.9);
+            }
+        }
+
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(234, 88, 12, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(234, 88, 12, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            opacity: 0.1;
+            animation: morph 15s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #14b8a6, #0d9488);
+            top: 20%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #0d9488, #0f172a);
+            bottom: 30%;
+            left: 15%;
+            animation-delay: 7s;
+        }
+
+        @keyframes morph {
+
+            0%,
+            100% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                transform: rotate(0deg);
+            }
+
+            25% {
+                border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+                transform: rotate(90deg);
+            }
+
+            50% {
+                border-radius: 30% 70% 70% 30% / 70% 30% 30% 70%;
+                transform: rotate(180deg);
+            }
+
+            75% {
+                border-radius: 70% 30% 30% 70% / 30% 70% 70% 30%;
+                transform: rotate(270deg);
+            }
+        }
+
+        /* Pulse animation for sections */
+        .pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-slate-200 relative">
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full liquid-glass z-50 border-b-0">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="flex items-center gap-3">
+                    <span class="text-2xl font-bold gradient-text">AM</span>
+                </a>
+                <div class="hidden md:flex space-x-10 items-center">
+                    <a href="#home" class="nav-link text-slate-300 font-medium text-sm hover:text-white">Home</a>
+                    <a href="#experience"
+                        class="nav-link text-slate-300 font-medium text-sm hover:text-white">Experience</a>
+                    <a href="#education"
+                        class="nav-link text-slate-300 font-medium text-sm hover:text-white">Education</a>
+                    <a href="#projects"
+                        class="nav-link text-slate-300 font-medium text-sm hover:text-white">Projects</a>
+                    <a href="#skills" class="nav-link text-slate-300 font-medium text-sm hover:text-white">Skills</a>
+                    <a href="#contact" class="nav-link text-slate-300 font-medium text-sm hover:text-white">Get In
+                        Touch</a>
+                    <a href="assets/Agniva_Mondal_Resume.pdf" download
+                        class="bg-teal-600 text-white px-6 py-2 rounded-lg font-semibold text-sm hover:bg-teal-500 transition duration-300 shadow-lg shadow-teal-500/20">
+                        Download Resume
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-3 pb-4">
+                <a href="#home" class="block py-2 nav-link text-gray-700 font-medium">Home</a>
+                <a href="#experience" class="block py-2 nav-link text-gray-700 font-medium">Experience</a>
+                <a href="#education" class="block py-2 nav-link text-gray-700 font-medium">Education</a>
+                <a href="#projects" class="block py-2 nav-link text-gray-700 font-medium">Projects</a>
+                <a href="#skills" class="block py-2 nav-link text-gray-700 font-medium">Skills</a>
+                <a href="#contact" class="block py-2 nav-link text-gray-700 font-medium">Contact</a>
+                <a href="assets/Agniva_Mondal_Resume.pdf" download
+                    class="block bg-teal-600 text-white px-6 py-2 rounded-lg font-semibold text-center mt-4">Download
+                    Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Landing Section -->
+    <section id="home" class="h-screen flex items-center justify-center pt-16 pb-20 relative z-10 overflow-hidden">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="flex flex-col items-center gap-6 text-center">
+                <!-- Photo Section -->
+                <div class="relative">
+                    <div
+                        class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl liquid-glass p-1.5 hover:scale-105 transition-transform duration-500">
+                        <img src="assets/profile-photo.jpg" alt="Agniva Mondal"
+                            class="w-full h-full object-cover rounded-full">
+                    </div>
+                </div>
+
+                <!-- Text Section -->
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-3 text-white leading-tight">
+                        Hi, I'm <span class="text-teal-400">Agniva</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-normal mb-4 text-slate-200">
+                        Graduate Student at Purdue University | Business Analytics & Data Science
+                    </h2>
+                    <p class="text-base md:text-lg text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                        I'm a healthcare analytics professional with experience in Real World Data analytics,
+                        forecasting, and market access. I enjoy creating data driven solutions that help teams
+                        make smarter decisions in healthcare and pharma analytics.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#projects"
+                            class="bg-teal-600 text-white px-8 py-3 rounded-md font-medium hover:bg-teal-700 transition duration-200 shadow-lg shadow-teal-500/20">
+                            View My Work
+                        </a>
+                        <a href="assets/Agniva_Mondal_Resume.pdf" download id="download-resume-btn"
+                            class="bg-white/10 text-white border border-white/30 px-8 py-3 rounded-md font-medium hover:bg-white/20 transition duration-200 backdrop-blur-sm">
+                            Download Resume
+                        </a>
+                        <a href="#contact"
+                            class="bg-white/10 text-white border border-white/30 px-8 py-3 rounded-md font-medium hover:bg-white/20 transition duration-200 backdrop-blur-sm">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Arrow -->
+        <a href="#experience"
+            class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/50 hover:text-white animate-bounce transition-colors duration-300">
+            <i class="fas fa-chevron-down text-4xl"></i>
+        </a>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Professional Experience</h2>
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                        Professional journey in data analytics, driving insights and business value
+                    </p>
+                </div>
+
+                <!-- Experience Timeline -->
+                <div class="space-y-12">
+                    <!-- Experience Item 1 - Current -->
+                    <div class="flex gap-8 relative">
+                        <!-- Timeline Line & Date -->
+                        <div class="flex gap-6 min-w-[300px] shrink-0">
+                            <!-- Line & Dot -->
+                            <div class="flex flex-col items-center relative">
+                                <div
+                                    class="w-4 h-4 bg-teal-400 rounded-full z-10 box-content border-4 border-slate-900 shadow-[0_0_10px_rgba(45,212,191,0.5)]">
+                                </div>
+                                <div class="w-0.5 bg-slate-700 absolute top-4 bottom-[-48px]"></div>
+                                <!-- Continuous line extending down -->
+                            </div>
+                            <!-- Date -->
+                            <div class="experience-date hidden md:flex sticky top-24 self-start">
+                                <span class="block">Aug 2025</span>
+                                <span class="block text-teal-500/80">- Present</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="flex-1 experience-item mt-[-8px]">
+                            <div class="mb-4">
+                                <h3 class="text-2xl font-bold text-white mb-1">Graduate Data Science Researcher</h3>
+                                <h4 class="text-xl font-semibold text-teal-400 mb-2">The Data Mine, Purdue University
+                                </h4>
+                                <div class="flex items-center gap-2 text-slate-300 mb-2 text-sm">
+                                    <i class="fas fa-map-marker-alt text-teal-500"></i>
+                                    <span>West Lafayette, IN</span>
+                                </div>
+                                <div class="md:hidden text-teal-400 font-bold text-xl mb-3">Aug 2025 – Present</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start text-slate-200">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
+                                        <span>Partnering with Johnson & Johnson to analyze hematology medical affairs
+                                            survey data and uncover insights for portfolio strategy.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-200">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
+                                        <span>Using Tableau + Power BI to deliver evidence-based analytics on multiple
+                                            hematology therapeutics.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 - IQVIA -->
+                    <div class="flex gap-8 relative">
+                        <!-- Timeline Line & Date -->
+                        <div class="flex gap-6 min-w-[300px] shrink-0">
+                            <!-- Line & Dot -->
+                            <div class="flex flex-col items-center relative">
+                                <div
+                                    class="w-4 h-4 bg-teal-400 rounded-full z-10 box-content border-4 border-slate-900 shadow-[0_0_10px_rgba(45,212,191,0.5)]">
+                                </div>
+                                <div class="w-0.5 bg-teal-700 absolute top-4 bottom-[-48px]"></div>
+                            </div>
+                            <!-- Date -->
+                            <div class="experience-date hidden md:flex sticky top-24 self-start">
+                                <span class="block">Feb 2022</span>
+                                <span class="block text-teal-500/80">- Jun 2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="flex-1 experience-item mt-[-8px]">
+                            <div class="mb-4">
+                                <h3 class="text-2xl font-bold text-white mb-1">Associate Consultant
+                                </h3>
+                                <h4 class="text-xl font-semibold text-teal-400 mb-2">IQVIA</h4>
+                                <div class="flex items-center gap-2 text-slate-300 mb-2 text-sm">
+                                    <i class="fas fa-map-marker-alt text-teal-500"></i>
+                                    <span>Bangalore, India</span>
+                                </div>
+                                <div class="md:hidden text-teal-400 font-bold text-xl mb-3">Feb 2022 – Jun 2025</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start text-slate-200">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
+                                        <span>Built automated vaccination tracking for RSV, Tdap, and flu, improving
+                                            Pfizer reporting accuracy and efficiency.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-200">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
+                                        <span>Developed COVID-19 co-administration analytics to support
+                                            cross-vaccination strategies.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-200">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
+                                        <span>Created claims-evaluation workflows that reduced manual review by ~30% and
+                                            improved accuracy.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-200">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
+                                        <span>Estimated out-of-pocket costs for Abrysvo to inform pricing + marketing
+                                            decisions.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 3 - Genpact -->
+                    <div class="flex gap-8 relative">
+                        <!-- Timeline Line & Date -->
+                        <div class="flex gap-6 min-w-[300px] shrink-0">
+                            <!-- Line & Dot -->
+                            <div class="flex flex-col items-center relative">
+                                <div
+                                    class="w-4 h-4 bg-teal-400 rounded-full z-10 box-content border-4 border-slate-900 shadow-[0_0_10px_rgba(45,212,191,0.5)]">
+                                </div>
+                                <div class="w-0.5 bg-slate-700 absolute top-4 bottom-[-48px]"></div>
+                            </div>
+                            <!-- Date -->
+                            <div class="experience-date hidden md:flex sticky top-24 self-start">
+                                <span class="block">Aug 2021</span>
+                                <span class="block text-teal-500/80">- Feb 2022</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="flex-1 experience-item mt-[-8px]">
+                            <div class="mb-4">
+                                <h3 class="text-2xl font-bold text-white mb-1">Business Analyst</h3>
+                                <h4 class="text-xl font-semibold text-teal-400 mb-2">Genpact</h4>
+                                <div class="flex items-center gap-2 text-slate-300 mb-2 text-sm">
+                                    <i class="fas fa-map-marker-alt text-teal-500"></i>
+                                    <span>Pune, India</span>
+                                </div>
+                                <div class="md:hidden text-teal-400 font-bold text-xl mb-3">Aug 2021 – Feb 2022</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start text-slate-200">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
+                                        <span>Built multi-geography dengue vaccine forecast models for Merck, improving
+                                            distribution planning + forecast accuracy.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 4 - AlphaMeld Corporation -->
+                    <div class="flex gap-8 relative">
+                        <!-- Timeline Line & Date -->
+                        <div class="flex gap-6 min-w-[300px] shrink-0">
+                            <!-- Line & Dot -->
+                            <div class="flex flex-col items-center relative">
+                                <div
+                                    class="w-4 h-4 bg-teal-400 rounded-full z-10 box-content border-4 border-slate-900 shadow-[0_0_10px_rgba(45,212,191,0.5)]">
+                                </div>
+                                <div class="w-0.5 bg-slate-700 absolute top-4 bottom-0"></div>
+                                <!-- Last item no extension -->
+                            </div>
+                            <!-- Date -->
+                            <div class="experience-date hidden md:flex sticky top-24 self-start">
+                                <span class="block">Jul 2019</span>
+                                <span class="block text-teal-500/80">- Aug 2021</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="flex-1 experience-item mt-[-8px]">
+                            <div class="mb-4">
+                                <h3 class="text-2xl font-bold text-white mb-1">Research Analyst
+                                </h3>
+                                <h4 class="text-xl font-semibold text-teal-400 mb-2">AlphaMeld Corporation</h4>
+                                <div class="flex items-center gap-2 text-slate-300 mb-2 text-sm">
+                                    <i class="fas fa-map-marker-alt text-teal-500"></i>
+                                    <span>Gurgaon, India</span>
+                                </div>
+                                <div class="md:hidden text-teal-400 font-bold text-xl mb-3">Jul 2019 – Aug 2021</div>
+                            </div>
+                            <div class="mb-4">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start text-slate-200">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
+                                        <span>Developed commercial forecasts + valuation models (NPV, IRR, scenario
+                                            analysis) across oncology, IBD, and rare diseases.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-200">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
+                                        <span>Automated pipeline + clinical trial analytics, cutting insight delivery
+                                            time by ~30%.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-200">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
+                                        <span>Improved cross-team workflow efficiency by ~25% through data pipeline
+                                            optimization.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Stats -->
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+                <div class="text-center experience-item p-6 !mb-0">
+                    <div class="text-4xl font-bold text-teal-400 mb-2">6+</div>
+                    <p class="text-slate-300 font-medium">Years Experience</p>
+                </div>
+                <div class="text-center experience-item p-6 !mb-0">
+                    <div class="text-4xl font-bold text-teal-400 mb-2">15+</div>
+                    <p class="text-slate-300 font-medium">Projects Delivered</p>
+                </div>
+                <div class="text-center experience-item p-6 !mb-0">
+                    <div class="text-4xl font-bold text-teal-400 mb-2">4</div>
+                    <p class="text-slate-300 font-medium">Companies</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Education & Learning Section -->
+    <section id="education" class="section-padding relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Education</h2>
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                        My Academic foundations and qualifications
+                    </p>
+                </div>
+
+                <!-- Education Timeline -->
+                <div class="relative">
+                    <div class="timeline-line"></div>
+                    <div class="space-y-12">
+                        <!-- Education Item 1 -->
+                        <div class="timeline-item relative pl-16 md:pl-20">
+                            <div
+                                class="absolute left-0 top-0 w-10 h-10 bg-teal-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center z-10">
+                                <i class="fas fa-graduation-cap text-white text-lg"></i>
+                            </div>
+                            <div class="experience-item">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-2">Master of Science</h3>
+                                        <h4 class="text-xl font-semibold text-teal-400 mb-2">Business Analytics and
+                                            Information Management</h4>
+                                        <p class="text-slate-300 font-medium">Purdue University, Daniels School of
+                                            Business</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <span
+                                            class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-semibold border border-teal-200">Current</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-4 mb-4 text-sm text-gray-500">
+                                    <span><i class="fas fa-calendar text-teal-600"></i> August 2024 - Present</span>
+                                    <span><i class="fas fa-map-marker-alt text-teal-600"></i> West Lafayette, IN</span>
+                                    <span><i class="fas fa-star text-teal-600"></i> GPA: 3.5+/4.0</span>
+                                </div>
+                                <p class="text-slate-300 mb-4 leading-relaxed">
+                                    Pursuing a rigorous STEM-designated curriculum focused on Business Analytics and
+                                    Information Management, developing expertise in Python, SQL, Cloud Computing, Data
+                                    Visualization, and Advanced Database Systems.
+                                </p>
+                                <div>
+                                    <p class="font-semibold text-white mb-2">Key Coursework & Highlights:</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span
+                                            class="bg-slate-800/50 text-teal-300 border border-teal-500/30 px-3 py-1 rounded-full text-sm">Business
+                                            Analytics</span>
+                                        <span
+                                            class="bg-slate-800/50 text-teal-300 border border-teal-500/30 px-3 py-1 rounded-full text-sm">Visual
+                                            Analytics</span>
+                                        <span
+                                            class="bg-slate-800/50 text-teal-300 border border-teal-500/30 px-3 py-1 rounded-full text-sm">Advanced
+                                            Database</span>
+                                        <span
+                                            class="bg-slate-800/50 text-teal-300 border border-teal-500/30 px-3 py-1 rounded-full text-sm">Cloud
+                                            Computing</span>
+                                        <span
+                                            class="bg-slate-800/50 text-teal-300 border border-teal-500/30 px-3 py-1 rounded-full text-sm">Data
+                                            Visualization</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Item 2 - Amity University -->
+                        <div class="timeline-item relative pl-16 md:pl-20">
+                            <div
+                                class="absolute left-0 top-0 w-10 h-10 bg-teal-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center z-10">
+                                <i class="fas fa-graduation-cap text-white text-lg"></i>
+                            </div>
+                            <div class="experience-item">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-2">Bachelor of Technology</h3>
+                                        <h4 class="text-xl font-semibold text-teal-400 mb-2">Biotechnology</h4>
+                                        <p class="text-slate-300 font-medium">Amity University, Amity Institute of
+                                            Biotechnology</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-4 mb-4 text-sm text-gray-500">
+                                    <span><i class="fas fa-calendar text-teal-600"></i> July 2015 - May 2019</span>
+                                    <span><i class="fas fa-map-marker-alt text-teal-600"></i> New Delhi, India</span>
+                                    <span><i class="fas fa-star text-teal-600"></i> GPA: 3.5+/4.0</span>
+                                </div>
+                                <p class="text-slate-300 mb-4 leading-relaxed">
+                                    Studied biotechnology focused on molecular biology, microbiology, and bioprocess
+                                    engineering with hands-on lab experience in DNA analysis, microbial culture, and
+                                    bioprocess methods.
+                                </p>
+                                <div>
+                                    <p class="font-semibold text-white mb-2">Key Coursework & Highlights:</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span
+                                            class="bg-slate-800/50 text-teal-300 border border-teal-500/30 px-3 py-1 rounded-full text-sm">Biostatistics</span>
+                                        <span
+                                            class="bg-slate-800/50 text-teal-300 border border-teal-500/30 px-3 py-1 rounded-full text-sm">Microbiology</span>
+                                        <span
+                                            class="bg-slate-800/50 text-teal-300 border border-teal-500/30 px-3 py-1 rounded-full text-sm">Cell
+                                            Biology</span>
+                                        <span
+                                            class="bg-slate-800/50 text-teal-300 border border-teal-500/30 px-3 py-1 rounded-full text-sm">Genetic
+                                            Engineering</span>
+                                        <span
+                                            class="bg-slate-800/50 text-teal-300 border border-teal-500/30 px-3 py-1 rounded-full text-sm">Biochemistry</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Stats -->
+                <div class="grid md:grid-cols-3 gap-6 mt-12">
+                    <div class="text-center experience-item p-6 !mb-0">
+                        <div class="text-4xl font-bold text-teal-400 mb-2">2</div>
+                        <p class="text-slate-300 font-medium">Degree Programs</p>
+                    </div>
+                    <div class="text-center experience-item p-6 !mb-0">
+                        <div class="text-4xl font-bold text-teal-400 mb-2">3.5+</div>
+                        <p class="text-slate-300 font-medium">GPA</p>
+                    </div>
+                    <div class="text-center experience-item p-6 !mb-0">
+                        <div class="text-4xl font-bold text-teal-400 mb-2">10+</div>
+                        <p class="text-slate-300 font-medium">Courses Completed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section with Filters -->
+    <section id="projects" class="section-padding relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Projects</h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
+                    Explore my data analytics projects showcasing end-to-end solutions, from data collection to
+                    actionable insights
+                </p>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-3 mb-12">
+                    <button
+                        class="filter-btn active px-6 py-2 rounded-full border-2 border-teal-500 bg-teal-500/20 text-teal-300 font-semibold hover:bg-teal-500/30"
+                        data-filter="all">
+                        All
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full border-2 border-slate-600 text-slate-300 font-semibold hover:bg-white/10 hover:border-slate-500"
+                        data-filter="machine-learning">
+                        Machine Learning
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full border-2 border-slate-600 text-slate-300 font-semibold hover:bg-white/10 hover:border-slate-500"
+                        data-filter="data-visualization">
+                        Data Visualization
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full border-2 border-slate-600 text-slate-300 font-semibold hover:bg-white/10 hover:border-slate-500"
+                        data-filter="healthcare">
+                        Healthcare Analytics
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full border-2 border-slate-600 text-slate-300 font-semibold hover:bg-white/10 hover:border-slate-500"
+                        data-filter="forecasting">
+                        Forecasting
+                    </button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" id="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card liquid-glass overflow-hidden"
+                    data-category="machine-learning forecasting healthcare">
+                    <div
+                        class="h-56 bg-gradient-to-br from-teal-500 via-teal-600 to-slate-700 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <i class="fas fa-chart-line text-7xl text-white opacity-90 relative z-10"></i>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span class="text-white text-sm font-semibold">Forecasting</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Vaccine Market Forecasting Model</h3>
+                        <p class="text-slate-300 mb-4 leading-relaxed">
+                            Developed a predictive analytics model to forecast vaccine market trends using time series
+                            analysis and machine learning techniques. The model provides actionable insights for
+                            healthcare strategy planning and resource allocation.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-teal-900/50 text-teal-200 border border-teal-500/30 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                            <span
+                                class="bg-teal-900/50 text-teal-200 border border-teal-500/30 px-3 py-1 rounded-full text-sm font-medium">Forecasting</span>
+                            <span
+                                class="bg-teal-900/50 text-teal-200 border border-teal-500/30 px-3 py-1 rounded-full text-sm font-medium">Machine
+                                Learning</span>
+                        </div>
+                        <a href="#"
+                            class="text-teal-600 font-semibold hover:text-teal-700 flex items-center gap-2 group">
+                            View on GitHub <i
+                                class="fas fa-external-link-alt text-sm group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card liquid-glass overflow-hidden" data-category="data-visualization healthcare">
+                    <div
+                        class="h-56 bg-gradient-to-br from-slate-700 via-slate-600 to-teal-500 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <i class="fas fa-map-marked-alt text-7xl text-white opacity-90 relative z-10"></i>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span class="text-white text-sm font-semibold">Analytics</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-white">SafeGraph Foot Traffic Analytics Dashboard
+                        </h3>
+                        <p class="text-slate-300 mb-4 leading-relaxed">
+                            Created an interactive dashboard analyzing foot traffic patterns using SafeGraph data.
+                            Provides real-time insights for retail and healthcare location analytics with advanced
+                            filtering and visualization capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-teal-900/50 text-teal-200 border border-teal-500/30 px-3 py-1 rounded-full text-sm font-medium">Tableau</span>
+                            <span
+                                class="bg-teal-900/50 text-teal-200 border border-teal-500/30 px-3 py-1 rounded-full text-sm font-medium">SQL</span>
+                            <span
+                                class="bg-teal-900/50 text-teal-200 border border-teal-500/30 px-3 py-1 rounded-full text-sm font-medium">BigQuery</span>
+                        </div>
+                        <a href="#"
+                            class="text-teal-600 font-semibold hover:text-teal-700 flex items-center gap-2 group">
+                            View on GitHub <i
+                                class="fas fa-external-link-alt text-sm group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card liquid-glass overflow-hidden" data-category="data-visualization">
+                    <div
+                        class="h-56 bg-gradient-to-br from-teal-600 via-teal-500 to-slate-600 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <i class="fas fa-film text-7xl text-white opacity-90 relative z-10"></i>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span class="text-white text-sm font-semibold">EDA</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Netflix Global Content Analytics</h3>
+                        <p class="text-slate-300 mb-4 leading-relaxed">
+                            Analyzed Netflix's global content library using Python and Pandas. Performed comprehensive
+                            EDA to identify content trends, regional preferences, and strategic insights for content
+                            strategy optimization.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-teal-900/50 text-teal-200 border border-teal-500/30 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                            <span
+                                class="bg-teal-900/50 text-teal-200 border border-teal-500/30 px-3 py-1 rounded-full text-sm font-medium">Pandas</span>
+                            <span
+                                class="bg-teal-900/50 text-teal-200 border border-teal-500/30 px-3 py-1 rounded-full text-sm font-medium">EDA</span>
+                        </div>
+                        <a href="#"
+                            class="text-teal-600 font-semibold hover:text-teal-700 flex items-center gap-2 group">
+                            View on GitHub <i
+                                class="fas fa-external-link-alt text-sm group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="https://github.com/agniva-mondal" target="_blank"
+                    class="inline-flex items-center gap-2 bg-gradient-to-r from-teal-600 to-teal-800 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-teal-500 hover:to-teal-700 transition duration-300 shadow-lg shadow-teal-500/20">
+                    View All Projects on GitHub <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <!-- Awards Section -->
+            <div class="liquid-glass p-8 md:p-12 mt-16">
+                <h3 class="text-3xl font-bold mb-10 text-center text-white">🏆 Awards & Recognition</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="liquid-glass p-6 border-l-4 border-teal-500">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-trophy text-4xl text-teal-600 mt-1"></i>
+                            <div>
+                                <span
+                                    class="bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">Academic</span>
+                                <h4 class="text-xl font-bold mb-2 text-white">Academic Excellence</h4>
+                                <p class="text-slate-400 text-sm mb-2">Purdue University</p>
+                                <p class="text-slate-300 leading-relaxed">Outstanding performance in MS-BAIM program at
+                                    Purdue University, demonstrating exceptional analytical capabilities and innovative
+                                    problem-solving approaches.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="liquid-glass p-6 border-l-4 border-slate-400">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-medal text-4xl text-slate-400 mt-1"></i>
+                            <div>
+                                <span
+                                    class="bg-slate-700/50 text-slate-300 px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block">Professional</span>
+                                <h4 class="text-xl font-bold mb-2 text-white">Data Analytics Achievement</h4>
+                                <p class="text-slate-400 text-sm mb-2">2024</p>
+                                <p class="text-slate-300 leading-relaxed">Recognition for innovative healthcare
+                                    analytics
+                                    solutions that drive meaningful business outcomes and patient impact.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awards Stats -->
+                <div class="grid md:grid-cols-3 gap-6 mt-8">
+                    <div class="text-center liquid-glass p-4 border border-teal-500/20">
+                        <div class="text-3xl font-bold text-teal-400 mb-2">2</div>
+                        <p class="text-slate-300 font-medium text-sm">Total Awards</p>
+                    </div>
+                    <div class="text-center liquid-glass p-4 border border-teal-500/20">
+                        <div class="text-3xl font-bold text-teal-400 mb-2">1</div>
+                        <p class="text-slate-300 font-medium text-sm">Academic Recognition</p>
+                    </div>
+                    <div class="text-center liquid-glass p-4 border border-teal-500/20">
+                        <div class="text-3xl font-bold text-teal-400 mb-2">1</div>
+                        <p class="text-slate-300 font-medium text-sm">Professional Honor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Skills</h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                    A comprehensive toolkit for turning raw data into strategic business value through advanced
+                    analytics and visualization
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Programming Languages -->
+                <div class="skill-card liquid-glass p-8">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-6">Programming Languages</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-200">Python</span>
+                                <span class="text-teal-400 font-bold">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-teal-500 to-teal-600 h-3 rounded-full transition-all duration-500"
+                                    style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-200">SQL</span>
+                                <span class="text-teal-400 font-bold">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-teal-500 to-teal-600 h-3 rounded-full transition-all duration-500"
+                                    style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Visualization -->
+                <div class="skill-card liquid-glass p-8">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-6">Data Visualization</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-200">Tableau</span>
+                                <span class="text-teal-400 font-bold">92%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-teal-500 to-teal-600 h-3 rounded-full transition-all duration-500"
+                                    style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-200">Spotfire</span>
+                                <span class="text-teal-400 font-bold">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-teal-500 to-teal-600 h-3 rounded-full transition-all duration-500"
+                                    style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases & Big Data -->
+                <div class="skill-card liquid-glass p-8">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-6">Databases & Big Data</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-200">BigQuery</span>
+                                <span class="text-teal-400 font-bold">87%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-teal-500 to-teal-600 h-3 rounded-full transition-all duration-500"
+                                    style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-200">SQL Server</span>
+                                <span class="text-teal-400 font-bold">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-teal-500 to-teal-600 h-3 rounded-full transition-all duration-500"
+                                    style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="skill-card liquid-glass p-8">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-6">Tools & Platforms</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-200">GitHub</span>
+                                <span class="text-teal-400 font-bold">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-teal-500 to-teal-600 h-3 rounded-full transition-all duration-500"
+                                    style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-200">Jupyter Notebook</span>
+                                <span class="text-teal-400 font-bold">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-teal-500 to-teal-600 h-3 rounded-full transition-all duration-500"
+                                    style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning -->
+                <div class="skill-card liquid-glass p-8">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-6">Machine Learning</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-200">scikit-learn</span>
+                                <span class="text-teal-400 font-bold">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-teal-500 to-teal-600 h-3 rounded-full transition-all duration-500"
+                                    style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-200">Pandas/NumPy</span>
+                                <span class="text-teal-400 font-bold">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-teal-500 to-teal-600 h-3 rounded-full transition-all duration-500"
+                                    style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Skills -->
+                <div class="skill-card liquid-glass p-8">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-6">Other Skills</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div
+                            class="flex items-center gap-3 liquid-glass p-3 rounded-lg border border-teal-500/30 shadow-sm">
+                            <i class="fas fa-check-circle text-teal-400"></i>
+                            <span class="font-semibold text-slate-200">Forecasting</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 liquid-glass p-3 rounded-lg border border-teal-500/30 shadow-sm">
+                            <i class="fas fa-check-circle text-teal-400"></i>
+                            <span class="font-semibold text-slate-200">Exploratory Data Analysis</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 liquid-glass p-3 rounded-lg border border-teal-500/30 shadow-sm">
+                            <i class="fas fa-check-circle text-teal-400"></i>
+                            <span class="font-semibold text-slate-200">Market Analytics</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 liquid-glass p-3 rounded-lg border border-teal-500/30 shadow-sm">
+                            <i class="fas fa-check-circle text-teal-400"></i>
+                            <span class="font-semibold text-slate-200">Patient Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Stats -->
+            <div class="grid md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
+                <div class="text-center liquid-glass p-6 border border-teal-500/20">
+                    <div class="text-3xl font-bold text-teal-400 mb-2">10+</div>
+                    <p class="text-slate-300 font-medium">Tools Mastered</p>
+                </div>
+                <div class="text-center liquid-glass p-6 border border-teal-500/20">
+                    <div class="text-3xl font-bold text-teal-400 mb-2">5+</div>
+                    <p class="text-slate-300 font-medium">Projects Completed</p>
+                </div>
+                <div class="text-center liquid-glass p-6 border border-teal-500/20">
+                    <div class="text-3xl font-bold text-teal-400 mb-2">3+</div>
+                    <p class="text-slate-300 font-medium">Years Experience</p>
+                </div>
+                <div class="text-center liquid-glass p-6 border border-teal-500/20">
+                    <div class="text-3xl font-bold text-teal-400 mb-2">100%</div>
+                    <p class="text-slate-300 font-medium">Data-Driven</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-slate-50 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-slate-900">Get In Touch</h2>
+                <p class="text-lg text-slate-700 max-w-2xl mx-auto">
+                    Let’s connect if you’re building something impactful or navigating your next big leap.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Contact Form -->
+                <div class="liquid-glass p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-slate-900">Send a Message</h3>
+                    <form id="contact-form" class="space-y-5">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-slate-900 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-slate-900 mb-2">Your
+                                Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-slate-900 mb-2">Your
+                                Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-teal-600 text-white px-6 py-4 rounded-lg font-bold text-lg hover:bg-teal-700 transition duration-300 shadow-lg hover:shadow-xl">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-slate-900">Contact Information</h3>
+                        <p class="text-slate-700 mb-6">Feel free to reach out through any of these channels. I typically
+                            respond within 24 hours </p>
+                        <div class="space-y-4">
+                            <a href="mailto:ssagniva1534@gmail.com"
+                                class="flex items-center gap-4 p-5 liquid-glass hover:bg-white/10 transition duration-300">
+                                <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope text-xl text-teal-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Email</p>
+                                    <p class="text-slate-700 text-sm">ssagniva1534@gmail.com</p>
+                                </div>
+                            </a>
+                            <a href="https://linkedin.com/in/agnivamondal1534" target="_blank"
+                                class="flex items-center gap-4 p-5 liquid-glass hover:bg-white/10 transition duration-300">
+                                <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fab fa-linkedin text-xl text-teal-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">LinkedIn</p>
+                                    <p class="text-slate-700 text-sm">linkedin.com/in/agnivamondal1534</p>
+                                </div>
+                            </a>
+                            <a href="https://github.com/agniva-mondal" target="_blank"
+                                class="flex items-center gap-4 p-5 liquid-glass hover:bg-white/10 transition duration-300">
+                                <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fab fa-github text-xl text-teal-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">GitHub</p>
+                                    <p class="text-slate-700 text-sm">github.com/agniva-mondal</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400">&copy; 2025 Agniva Mondal. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a href="mailto:ssagniva1534@gmail.com"
+                        class="text-gray-400 hover:text-teal-400 transition duration-300" aria-label="Email">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/agnivamondal1534" target="_blank"
+                        class="text-gray-400 hover:text-teal-400 transition duration-300" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://github.com/agniva-mondal" target="_blank"
+                        class="text-gray-400 hover:text-teal-400 transition duration-300" aria-label="GitHub">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Project Filter Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-teal-500/20', 'text-teal-300', 'border-teal-500');
+                    btn.classList.add('border-slate-600', 'text-slate-300');
+                });
+
+                // Add active class to clicked button
+                button.classList.add('active', 'bg-teal-500/20', 'text-teal-300', 'border-teal-500');
+                button.classList.remove('border-slate-600', 'text-slate-300');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        const categories = card.getAttribute('data-category');
+                        if (categories && categories.includes(filterValue)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+
+        // Contact Form Handling
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            alert(`Thank you for your message, ${name}! I'll get back to you at ${email} soon.\n\nNote: This is a demo form. In production, this would send an email or save to a database.`);
+
+            this.reset();
+        });
+
+        // Download Resume Functionality - Now handled by download attribute on anchor tags
+        // If you want to track downloads, you can add analytics here
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Animate progress bars on scroll
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+
+                    const progressBars = entry.target.querySelectorAll('[style*="width"]');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Add scroll animations to sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(section);
+        });
+
+        document.querySelectorAll('.skill-card, .project-card, .experience-item').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            // Stagger animation based on index to create "rolling" effect
+            // card.style.transitionDelay = `${(index % 5) * 0.1}s`; 
+            observer.observe(card);
+        });
+    </script>
+</body>
+
+</html>
