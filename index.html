@@ -72,6 +72,27 @@
             width: 100%;
         }
 
+        /* NAV LIGHT MODE WHEN OVER CONTACT SECTION */
+        body.nav-light nav .nav-link {
+            color: #0f172a !important;
+        }
+
+        body.nav-light nav .nav-link:hover {
+            color: #0d9488 !important;
+        }
+
+        body.nav-light nav .gradient-text {
+            background: none;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: #0f172a;
+            background-clip: initial;
+            color: #0f172a;
+        }
+
+        body.nav-light #mobile-menu-btn {
+            color: #0f172a !important;
+        }
+
         .skill-card,
         .project-card,
         .feature-card,
@@ -256,7 +277,6 @@
             background-repeat: no-repeat;
         }
 
-        /* Ensure aspect ratio logic holds by overriding/setting correct dimensions via media queries if aspect-ratio support is shaky or logic needs to be cover-based */
         @media (min-aspect-ratio: 16/10) {
             .animated-bg {
                 width: 100vw;
@@ -1496,9 +1516,6 @@
             this.reset();
         });
 
-        // Download Resume Functionality - Now handled by download attribute on anchor tags
-        // If you want to track downloads, you can add analytics here
-
         // Add scroll effect to navigation
         window.addEventListener('scroll', function () {
             const nav = document.querySelector('nav');
@@ -1515,7 +1532,7 @@
             rootMargin: '0px'
         };
 
-        const observer = new IntersectionObserver(function (entries) {
+        const sectionObserver = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -1538,17 +1555,37 @@
             section.style.opacity = '0';
             section.style.transform = 'translateY(30px)';
             section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(section);
+            sectionObserver.observe(section);
         });
 
         document.querySelectorAll('.skill-card, .project-card, .experience-item').forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(50px)';
             card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            // Stagger animation based on index to create "rolling" effect
-            // card.style.transitionDelay = `${(index % 5) * 0.1}s`; 
-            observer.observe(card);
+            sectionObserver.observe(card);
         });
+
+        // NAV COLOR CHANGE WHEN CONTACT SECTION IS IN VIEW
+        const contactSection = document.getElementById('contact');
+
+        if (contactSection) {
+            const navObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            document.body.classList.add('nav-light');
+                        } else {
+                            document.body.classList.remove('nav-light');
+                        }
+                    });
+                },
+                {
+                    threshold: 0.5
+                }
+            );
+
+            navObserver.observe(contactSection);
+        }
     </script>
 </body>
 
