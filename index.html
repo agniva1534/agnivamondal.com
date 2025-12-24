@@ -474,7 +474,6 @@
     </nav>
 
     <!-- Hero / Landing Section -->
-    <!-- Hero / Landing Section -->
     <section id="home" class="h-screen flex items-center justify-center pt-16 pb-20 relative z-10 overflow-hidden">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="flex flex-col items-center gap-6 text-center">
@@ -526,7 +525,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="Professional Experience" class="section-padding relative z-10">
+    <section id="experience" class="section-padding relative z-10">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
@@ -536,8 +535,6 @@
                     </p>
                 </div>
 
-                <!-- Experience Timeline -->
-                <!-- Experience Timeline -->
                 <!-- Experience Timeline -->
                 <div class="space-y-12">
                     <!-- Experience Item 1 - Current -->
@@ -1312,7 +1309,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="Get In Touch" class="section-padding bg-slate-50 relative z-10">
+    <section id="contact" class="section-padding bg-slate-50 relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 text-slate-900">Get In Touch</h2>
@@ -1548,10 +1545,7 @@
             card.style.transform = 'translateY(50px)';
             card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
             // Stagger animation based on index to create "rolling" effect
-            // Note: Use a simple modulo or check offsetTop if items are in different sections for cleaner staggering
-            // For now, a slight random or index-based delay works well
             // card.style.transitionDelay = `${(index % 5) * 0.1}s`; 
-
             observer.observe(card);
         });
     </script>
