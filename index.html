@@ -8,8 +8,9 @@
     <meta name="description"
         content="Portfolio of Agniva Mondal - Data Science Researcher at Purdue University specializing in Data Analytics, Healthcare Insights, and Business Intelligence">
 
-    <!-- Favicon -->
+    <!-- Favicon (desktop + mobile/tablets) -->
     <link rel="icon" type="image/jpeg" href="assets/profile-photo.jpg">
+    <link rel="apple-touch-icon" href="assets/profile-photo.jpg">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,6 +35,7 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         h1,
@@ -232,6 +234,13 @@
             font-size: 0.875rem;
         }
 
+        @media (max-width: 1024px) {
+            .experience-date {
+                font-size: 1.75rem;
+                min-width: auto;
+            }
+        }
+
         @media (max-width: 768px) {
             .section-padding {
                 padding: 4rem 0;
@@ -239,6 +248,11 @@
 
             .timeline-line {
                 left: 15px;
+            }
+
+            .experience-side {
+                min-width: auto;
+                width: auto;
             }
         }
 
@@ -495,7 +509,7 @@
     </nav>
 
     <!-- Hero / Landing Section -->
-    <section id="home" class="h-screen flex items-center justify-center pt-16 pb-20 relative z-10 overflow-hidden">
+    <section id="home" class="h-screen flex items-center justify-center pt-20 pb-20 relative z-10 overflow-hidden">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="flex flex-col items-center gap-6 text-center">
                 <!-- Photo Section -->
@@ -559,16 +573,15 @@
                 <!-- Experience Timeline -->
                 <div class="space-y-12">
                     <!-- Experience Item 1 - Current -->
-                    <div class="flex gap-8 relative">
+                    <div class="flex flex-col md:flex-row gap-8 relative">
                         <!-- Timeline Line & Date -->
-                        <div class="flex gap-6 min-w-[300px] shrink-0">
+                        <div class="flex gap-6 min-w-[80px] shrink-0 experience-side">
                             <!-- Line & Dot -->
                             <div class="flex flex-col items-center relative">
                                 <div
                                     class="w-4 h-4 bg-teal-400 rounded-full z-10 box-content border-4 border-slate-900 shadow-[0_0_10px_rgba(45,212,191,0.5)]">
                                 </div>
                                 <div class="w-0.5 bg-slate-700 absolute top-4 bottom-[-48px]"></div>
-                                <!-- Continuous line extending down -->
                             </div>
                             <!-- Date -->
                             <div class="experience-date hidden md:flex sticky top-24 self-start">
@@ -608,9 +621,9 @@
                     </div>
 
                     <!-- Experience Item 2 - IQVIA -->
-                    <div class="flex gap-8 relative">
+                    <div class="flex flex-col md:flex-row gap-8 relative">
                         <!-- Timeline Line & Date -->
-                        <div class="flex gap-6 min-w-[300px] shrink-0">
+                        <div class="flex gap-6 min-w-[80px] shrink-0 experience-side">
                             <!-- Line & Dot -->
                             <div class="flex flex-col items-center relative">
                                 <div
@@ -666,9 +679,9 @@
                     </div>
 
                     <!-- Experience Item 3 - Genpact -->
-                    <div class="flex gap-8 relative">
+                    <div class="flex flex-col md:flex-row gap-8 relative">
                         <!-- Timeline Line & Date -->
-                        <div class="flex gap-6 min-w-[300px] shrink-0">
+                        <div class="flex gap-6 min-w-[80px] shrink-0 experience-side">
                             <!-- Line & Dot -->
                             <div class="flex flex-col items-center relative">
                                 <div
@@ -708,16 +721,15 @@
                     </div>
 
                     <!-- Experience Item 4 - AlphaMeld Corporation -->
-                    <div class="flex gap-8 relative">
+                    <div class="flex flex-col md:flex-row gap-8 relative">
                         <!-- Timeline Line & Date -->
-                        <div class="flex gap-6 min-w-[300px] shrink-0">
+                        <div class="flex gap-6 min-w-[80px] shrink-0 experience-side">
                             <!-- Line & Dot -->
                             <div class="flex flex-col items-center relative">
                                 <div
                                     class="w-4 h-4 bg-teal-400 rounded-full z-10 box-content border-4 border-slate-900 shadow-[0_0_10px_rgba(45,212,191,0.5)]">
                                 </div>
                                 <div class="w-0.5 bg-slate-700 absolute top-4 bottom-0"></div>
-                                <!-- Last item no extension -->
                             </div>
                             <!-- Date -->
                             <div class="experience-date hidden md:flex sticky top-24 self-start">
@@ -778,7 +790,6 @@
                 </div>
             </div>
         </div>
-        </div>
     </section>
 
     <!-- Education & Learning Section -->
@@ -803,7 +814,7 @@
                                 <i class="fas fa-graduation-cap text-white text-lg"></i>
                             </div>
                             <div class="experience-item">
-                                <div class="flex items-start justify-between mb-4">
+                                <div class="flex flex-col md:flex-row items-start justify-between mb-4 gap-4">
                                     <div>
                                         <h3 class="text-2xl font-bold text-white mb-2">Master of Science</h3>
                                         <h4 class="text-xl font-semibold text-teal-400 mb-2">Business Analytics and
@@ -811,7 +822,7 @@
                                         <p class="text-slate-300 font-medium">Purdue University, Daniels School of
                                             Business</p>
                                     </div>
-                                    <div class="text-right">
+                                    <div class="text-left md:text-right">
                                         <span
                                             class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-semibold border border-teal-200">Current</span>
                                     </div>
@@ -856,7 +867,7 @@
                                 <i class="fas fa-graduation-cap text-white text-lg"></i>
                             </div>
                             <div class="experience-item">
-                                <div class="flex items-start justify-between mb-4">
+                                <div class="flex flex-col md:flex-row items-start justify-between mb-4 gap-4">
                                     <div>
                                         <h3 class="text-2xl font-bold text-white mb-2">Bachelor of Technology</h3>
                                         <h4 class="text-xl font-semibold text-teal-400 mb-2">Biotechnology</h4>
@@ -1341,7 +1352,7 @@
 
             <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                 <!-- Contact Form -->
-                <div class="liquid-glass p-8">
+                <div class="liquid-glass p-8 bg-white/80">
                     <h3 class="text-2xl font-bold mb-6 text-slate-900">Send a Message</h3>
                     <form id="contact-form" class="space-y-5">
                         <div>
@@ -1373,10 +1384,10 @@
                     <div>
                         <h3 class="text-2xl font-bold mb-6 text-slate-900">Contact Information</h3>
                         <p class="text-slate-700 mb-6">Feel free to reach out through any of these channels. I typically
-                            respond within 24 hours </p>
+                            respond within 24 hours.</p>
                         <div class="space-y-4">
                             <a href="mailto:ssagniva1534@gmail.com"
-                                class="flex items-center gap-4 p-5 liquid-glass hover:bg-white/10 transition duration-300">
+                                class="flex items-center gap-4 p-5 liquid-glass bg-white/70 hover:bg-white/90 transition duration-300">
                                 <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-envelope text-xl text-teal-400"></i>
                                 </div>
@@ -1386,7 +1397,7 @@
                                 </div>
                             </a>
                             <a href="https://linkedin.com/in/agnivamondal1534" target="_blank"
-                                class="flex items-center gap-4 p-5 liquid-glass hover:bg-white/10 transition duration-300">
+                                class="flex items-center gap-4 p-5 liquid-glass bg-white/70 hover:bg-white/90 transition duration-300">
                                 <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center">
                                     <i class="fab fa-linkedin text-xl text-teal-400"></i>
                                 </div>
@@ -1396,7 +1407,7 @@
                                 </div>
                             </a>
                             <a href="https://github.com/agniva-mondal" target="_blank"
-                                class="flex items-center gap-4 p-5 liquid-glass hover:bg-white/10 transition duration-300">
+                                class="flex items-center gap-4 p-5 liquid-glass bg-white/70 hover:bg-white/90 transition duration-300">
                                 <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center">
                                     <i class="fab fa-github text-xl text-teal-400"></i>
                                 </div>
@@ -1410,8 +1421,6 @@
 
                 </div>
             </div>
-        </div>
-        </div>
         </div>
     </section>
 
@@ -1558,7 +1567,7 @@
             sectionObserver.observe(section);
         });
 
-        document.querySelectorAll('.skill-card, .project-card, .experience-item').forEach((card, index) => {
+        document.querySelectorAll('.skill-card, .project-card, .experience-item').forEach((card) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(50px)';
             card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
