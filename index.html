@@ -459,6 +459,63 @@
             }
         }
     </style>
+    <!-- Responsive Enhancements -->
+    <style>
+        /* Mobile menu display */
+        #mobile-menu.show {
+            display: block !important;
+        }
+
+        /* Adjust nav link spacing on small screens */
+        @media (max-width: 640px) {
+            .nav-link {
+                font-size: 0.875rem;
+                /* slightly smaller */
+                padding: 0.5rem 0;
+            }
+
+            .section-padding {
+                padding: 3rem 0;
+            }
+
+            /* Match Experience card styling to Education section */
+            .experience-item {
+                background: rgba(255, 255, 255, 0.05);
+                /* slightly visible bg like education cards */
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 0.75rem;
+                /* rounded-xl */
+                padding: 1.5rem;
+                /* Match education padding */
+                margin-top: 1rem;
+            }
+
+            /* Consistent font sizes for mobile cards */
+            .experience-item h3 {
+                font-size: 1.5rem;
+                /* Match Education h3 (2xl on desktop, slightly smaller on mobile) */
+                line-height: 1.3;
+                color: #ffffff;
+            }
+
+            .experience-item h4 {
+                font-size: 1.25rem;
+                /* Match Education h4 (xl) */
+                color: #2dd4bf;
+                /* text-teal-400 */
+                margin-bottom: 0.5rem;
+            }
+
+            .experience-item li {
+                font-size: 1rem;
+                /* Match Education body text */
+                color: #cbd5e1;
+                /* text-slate-300 */
+            }
+        }
+    </style>
+
 </head>
 
 <body class="text-slate-200 relative">
@@ -509,11 +566,12 @@
     </nav>
 
     <!-- Hero / Landing Section -->
-    <section id="home" class="h-screen flex items-center justify-center pt-20 pb-20 relative z-10 overflow-hidden">
+    <section id="home"
+        class="min-h-screen flex items-center justify-center pt-32 md:pt-20 pb-28 relative z-10 overflow-hidden">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="flex flex-col items-center gap-6 text-center">
                 <!-- Photo Section -->
-                <div class="relative">
+                <div class="relative hero-photo">
                     <div
                         class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl liquid-glass p-1.5 hover:scale-105 transition-transform duration-500">
                         <img src="assets/profile-photo.jpg" alt="Agniva Mondal"
@@ -571,17 +629,185 @@
                 </div>
 
                 <!-- Experience Timeline -->
-                <div class="space-y-12">
+                <!-- Experience Timeline - Mobile View (< 768px) -->
+                <div class="block md:hidden relative">
+                    <div class="timeline-line"></div>
+                    <div class="space-y-12">
+                        <!-- Experience Item 1 - Current -->
+                        <div class="timeline-item relative pl-16 md:pl-20">
+                            <div
+                                class="absolute left-0 top-0 w-10 h-10 bg-teal-600 rounded-full border-4 border-slate-900 shadow-lg flex items-center justify-center z-10 experience-icon">
+                                <i class="fas fa-briefcase text-white text-sm"></i>
+                            </div>
+                            <div class="experience-item">
+                                <div class="flex flex-col md:flex-row items-start justify-between mb-2 gap-2">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-2">Graduate Data Science
+                                            Researcher</h3>
+                                        <h4 class="text-xl font-semibold text-teal-400 mb-2">The Data Mine, Purdue
+                                            University</h4>
+                                    </div>
+                                    <div class="text-left md:text-right">
+                                        <span
+                                            class="bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full text-xs font-semibold border border-teal-500/30">Current</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-sm text-slate-400">
+                                    <span><i class="fas fa-calendar-alt text-teal-500 mr-1.5"></i>Aug 2025 –
+                                        Present</span>
+                                    <span><i class="fas fa-map-marker-alt text-teal-500 mr-1.5"></i>West Lafayette,
+                                        IN</span>
+                                </div>
+
+                                <ul class="space-y-2">
+                                    <li class="flex items-start text-slate-300">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                        <span>Partnering with Johnson & Johnson to analyze hematology medical affairs
+                                            survey data and uncover insights for portfolio strategy.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-300">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                        <span>Using Tableau + Power BI to deliver evidence-based analytics on multiple
+                                            hematology therapeutics.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Experience Item 2 - IQVIA -->
+                        <div class="timeline-item relative pl-16 md:pl-20">
+                            <div
+                                class="absolute left-0 top-0 w-10 h-10 bg-teal-600 rounded-full border-4 border-slate-900 shadow-lg flex items-center justify-center z-10 experience-icon">
+                                <i class="fas fa-briefcase text-white text-sm"></i>
+                            </div>
+                            <div class="experience-item">
+                                <div class="flex flex-col md:flex-row items-start justify-between mb-2 gap-2">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-2">Associate Consultant</h3>
+                                        <h4 class="text-xl font-semibold text-teal-400 mb-2">IQVIA</h4>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-sm text-slate-400">
+                                    <span><i class="fas fa-calendar-alt text-teal-500 mr-1.5"></i>Feb 2022 – Jun
+                                        2025</span>
+                                    <span><i class="fas fa-map-marker-alt text-teal-500 mr-1.5"></i>Bangalore,
+                                        India</span>
+                                </div>
+
+                                <ul class="space-y-2">
+                                    <li class="flex items-start text-slate-300">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                        <span>Built automated vaccination tracking for RSV, Tdap, and flu, improving
+                                            Pfizer reporting accuracy and efficiency.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-300">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                        <span>Developed COVID-19 co-administration analytics to support
+                                            cross-vaccination strategies.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-300">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                        <span>Created claims-evaluation workflows that reduced manual review by ~30% and
+                                            improved accuracy.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-300">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                        <span>Estimated out-of-pocket costs for Abrysvo to inform pricing + marketing
+                                            decisions.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Experience Item 3 - Genpact -->
+                        <div class="timeline-item relative pl-16 md:pl-20">
+                            <div
+                                class="absolute left-0 top-0 w-10 h-10 bg-teal-600 rounded-full border-4 border-slate-900 shadow-lg flex items-center justify-center z-10 experience-icon">
+                                <i class="fas fa-briefcase text-white text-sm"></i>
+                            </div>
+                            <div class="experience-item">
+                                <div class="flex flex-col md:flex-row items-start justify-between mb-2 gap-2">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-2">Business Analyst</h3>
+                                        <h4 class="text-xl font-semibold text-teal-400 mb-2">Genpact</h4>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-sm text-slate-400">
+                                    <span><i class="fas fa-calendar-alt text-teal-500 mr-1.5"></i>Aug 2021 – Feb
+                                        2022</span>
+                                    <span><i class="fas fa-map-marker-alt text-teal-500 mr-1.5"></i>Pune, India</span>
+                                </div>
+
+                                <ul class="space-y-2">
+                                    <li class="flex items-start text-slate-300">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                        <span>Built multi-geography dengue vaccine forecast models for Merck, improving
+                                            distribution planning + forecast accuracy.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Experience Item 4 - AlphaMeld -->
+                        <div class="timeline-item relative pl-16 md:pl-20">
+                            <div
+                                class="absolute left-0 top-0 w-10 h-10 bg-teal-600 rounded-full border-4 border-slate-900 shadow-lg flex items-center justify-center z-10 experience-icon">
+                                <i class="fas fa-briefcase text-white text-sm"></i>
+                            </div>
+                            <div class="experience-item">
+                                <div class="flex flex-col md:flex-row items-start justify-between mb-2 gap-2">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-2">Research Analyst</h3>
+                                        <h4 class="text-xl font-semibold text-teal-400 mb-2">AlphaMeld Corporation
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-sm text-slate-400">
+                                    <span><i class="fas fa-calendar-alt text-teal-500 mr-1.5"></i>Jul 2019 – Aug
+                                        2021</span>
+                                    <span><i class="fas fa-map-marker-alt text-teal-500 mr-1.5"></i>Gurgaon,
+                                        India</span>
+                                </div>
+
+                                <ul class="space-y-2">
+                                    <li class="flex items-start text-slate-300">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                        <span>Developed commercial forecasts + valuation models (NPV, IRR, scenario
+                                            analysis) across oncology, IBD, and rare diseases.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-300">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                        <span>Automated pipeline + clinical trial analytics, cutting insight delivery
+                                            time by ~30%.</span>
+                                    </li>
+                                    <li class="flex items-start text-slate-300">
+                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                        <span>Improved cross-team workflow efficiency by ~25% through data pipeline
+                                            optimization.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Timeline - Desktop/Tablet View (>= 768px) -->
+                <div class="hidden md:block space-y-12">
                     <!-- Experience Item 1 - Current -->
-                    <div class="flex flex-col md:flex-row gap-8 relative">
+                    <div class="flex gap-8 relative">
                         <!-- Timeline Line & Date -->
-                        <div class="flex gap-6 min-w-[80px] shrink-0 experience-side">
+                        <div class="flex gap-6 min-w-[300px] shrink-0">
                             <!-- Line & Dot -->
                             <div class="flex flex-col items-center relative">
                                 <div
                                     class="w-4 h-4 bg-teal-400 rounded-full z-10 box-content border-4 border-slate-900 shadow-[0_0_10px_rgba(45,212,191,0.5)]">
                                 </div>
                                 <div class="w-0.5 bg-slate-700 absolute top-4 bottom-[-48px]"></div>
+                                <!-- Continuous line extending down -->
                             </div>
                             <!-- Date -->
                             <div class="experience-date hidden md:flex sticky top-24 self-start">
@@ -593,43 +819,50 @@
                         <!-- Content -->
                         <div class="flex-1 experience-item mt-[-8px]">
                             <div class="mb-4">
-                                <h3 class="text-2xl font-bold text-white mb-1">Graduate Data Science Researcher</h3>
-                                <h4 class="text-xl font-semibold text-teal-400 mb-2">The Data Mine, Purdue University
-                                </h4>
-                                <div class="flex items-center gap-2 text-slate-300 mb-2 text-sm">
+                                <div class="flex justify-between items-start">
+                                    <div class="flex-1">
+                                        <h3 class="text-2xl font-bold text-white mb-1">Graduate Data Science Researcher
+                                        </h3>
+                                        <h4 class="text-xl font-semibold text-teal-400 mb-2">The Data Mine, Purdue
+                                            University
+                                        </h4>
+                                    </div>
+                                    <span
+                                        class="bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full text-xs font-semibold border border-teal-500/30 whitespace-nowrap ml-4">Current</span>
+                                </div>
+
+                                <div class="flex items-center gap-2 text-slate-300 mb-4 text-sm">
                                     <i class="fas fa-map-marker-alt text-teal-500"></i>
                                     <span>West Lafayette, IN</span>
                                 </div>
                                 <div class="md:hidden text-teal-400 font-bold text-xl mb-3">Aug 2025 – Present</div>
                             </div>
 
-                            <div class="mb-4">
-                                <ul class="space-y-3">
-                                    <li class="flex items-start text-slate-200">
-                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
-                                        <span>Partnering with Johnson & Johnson to analyze hematology medical affairs
-                                            survey data and uncover insights for portfolio strategy.</span>
-                                    </li>
-                                    <li class="flex items-start text-slate-200">
-                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
-                                        <span>Using Tableau + Power BI to deliver evidence-based analytics on multiple
-                                            hematology therapeutics.</span>
-                                    </li>
-                                </ul>
-                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-start text-slate-200">
+                                    <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                    <span>Partnering with Johnson & Johnson to analyze hematology medical affairs survey
+                                        data and uncover insights for portfolio strategy.</span>
+                                </li>
+                                <li class="flex items-start text-slate-200">
+                                    <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                    <span>Using Tableau + Power BI to deliver evidence-based analytics on multiple
+                                        hematology therapeutics.</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
                     <!-- Experience Item 2 - IQVIA -->
-                    <div class="flex flex-col md:flex-row gap-8 relative">
+                    <div class="flex gap-8 relative">
                         <!-- Timeline Line & Date -->
-                        <div class="flex gap-6 min-w-[80px] shrink-0 experience-side">
+                        <div class="flex gap-6 min-w-[300px] shrink-0">
                             <!-- Line & Dot -->
                             <div class="flex flex-col items-center relative">
                                 <div
                                     class="w-4 h-4 bg-teal-400 rounded-full z-10 box-content border-4 border-slate-900 shadow-[0_0_10px_rgba(45,212,191,0.5)]">
                                 </div>
-                                <div class="w-0.5 bg-teal-700 absolute top-4 bottom-[-48px]"></div>
+                                <div class="w-0.5 bg-slate-700 absolute top-4 bottom-[-48px]"></div>
                             </div>
                             <!-- Date -->
                             <div class="experience-date hidden md:flex sticky top-24 self-start">
@@ -641,8 +874,7 @@
                         <!-- Content -->
                         <div class="flex-1 experience-item mt-[-8px]">
                             <div class="mb-4">
-                                <h3 class="text-2xl font-bold text-white mb-1">Associate Consultant
-                                </h3>
+                                <h3 class="text-2xl font-bold text-white mb-1">Associate Consultant</h3>
                                 <h4 class="text-xl font-semibold text-teal-400 mb-2">IQVIA</h4>
                                 <div class="flex items-center gap-2 text-slate-300 mb-2 text-sm">
                                     <i class="fas fa-map-marker-alt text-teal-500"></i>
@@ -651,37 +883,35 @@
                                 <div class="md:hidden text-teal-400 font-bold text-xl mb-3">Feb 2022 – Jun 2025</div>
                             </div>
 
-                            <div class="mb-4">
-                                <ul class="space-y-3">
-                                    <li class="flex items-start text-slate-200">
-                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
-                                        <span>Built automated vaccination tracking for RSV, Tdap, and flu, improving
-                                            Pfizer reporting accuracy and efficiency.</span>
-                                    </li>
-                                    <li class="flex items-start text-slate-200">
-                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
-                                        <span>Developed COVID-19 co-administration analytics to support
-                                            cross-vaccination strategies.</span>
-                                    </li>
-                                    <li class="flex items-start text-slate-200">
-                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
-                                        <span>Created claims-evaluation workflows that reduced manual review by ~30% and
-                                            improved accuracy.</span>
-                                    </li>
-                                    <li class="flex items-start text-slate-200">
-                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
-                                        <span>Estimated out-of-pocket costs for Abrysvo to inform pricing + marketing
-                                            decisions.</span>
-                                    </li>
-                                </ul>
-                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-start text-slate-200">
+                                    <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                    <span>Built automated vaccination tracking for RSV, Tdap, and flu, improving Pfizer
+                                        reporting accuracy and efficiency.</span>
+                                </li>
+                                <li class="flex items-start text-slate-200">
+                                    <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                    <span>Developed COVID-19 co-administration analytics to support cross-vaccination
+                                        strategies.</span>
+                                </li>
+                                <li class="flex items-start text-slate-200">
+                                    <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                    <span>Created claims-evaluation workflows that reduced manual review by ~30% and
+                                        improved accuracy.</span>
+                                </li>
+                                <li class="flex items-start text-slate-200">
+                                    <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                    <span>Estimated out-of-pocket costs for Abrysvo to inform pricing + marketing
+                                        decisions.</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
                     <!-- Experience Item 3 - Genpact -->
-                    <div class="flex flex-col md:flex-row gap-8 relative">
+                    <div class="flex gap-8 relative">
                         <!-- Timeline Line & Date -->
-                        <div class="flex gap-6 min-w-[80px] shrink-0 experience-side">
+                        <div class="flex gap-6 min-w-[300px] shrink-0">
                             <!-- Line & Dot -->
                             <div class="flex flex-col items-center relative">
                                 <div
@@ -708,22 +938,20 @@
                                 <div class="md:hidden text-teal-400 font-bold text-xl mb-3">Aug 2021 – Feb 2022</div>
                             </div>
 
-                            <div class="mb-4">
-                                <ul class="space-y-3">
-                                    <li class="flex items-start text-slate-200">
-                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
-                                        <span>Built multi-geography dengue vaccine forecast models for Merck, improving
-                                            distribution planning + forecast accuracy.</span>
-                                    </li>
-                                </ul>
-                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-start text-slate-200">
+                                    <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                    <span>Built multi-geography dengue vaccine forecast models for Merck, improving
+                                        distribution planning + forecast accuracy.</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
-                    <!-- Experience Item 4 - AlphaMeld Corporation -->
-                    <div class="flex flex-col md:flex-row gap-8 relative">
+                    <!-- Experience Item 4 - AlphaMeld -->
+                    <div class="flex gap-8 relative">
                         <!-- Timeline Line & Date -->
-                        <div class="flex gap-6 min-w-[80px] shrink-0 experience-side">
+                        <div class="flex gap-6 min-w-[300px] shrink-0">
                             <!-- Line & Dot -->
                             <div class="flex flex-col items-center relative">
                                 <div
@@ -741,8 +969,7 @@
                         <!-- Content -->
                         <div class="flex-1 experience-item mt-[-8px]">
                             <div class="mb-4">
-                                <h3 class="text-2xl font-bold text-white mb-1">Research Analyst
-                                </h3>
+                                <h3 class="text-2xl font-bold text-white mb-1">Research Analyst</h3>
                                 <h4 class="text-xl font-semibold text-teal-400 mb-2">AlphaMeld Corporation</h4>
                                 <div class="flex items-center gap-2 text-slate-300 mb-2 text-sm">
                                     <i class="fas fa-map-marker-alt text-teal-500"></i>
@@ -750,25 +977,24 @@
                                 </div>
                                 <div class="md:hidden text-teal-400 font-bold text-xl mb-3">Jul 2019 – Aug 2021</div>
                             </div>
-                            <div class="mb-4">
-                                <ul class="space-y-3">
-                                    <li class="flex items-start text-slate-200">
-                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
-                                        <span>Developed commercial forecasts + valuation models (NPV, IRR, scenario
-                                            analysis) across oncology, IBD, and rare diseases.</span>
-                                    </li>
-                                    <li class="flex items-start text-slate-200">
-                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
-                                        <span>Automated pipeline + clinical trial analytics, cutting insight delivery
-                                            time by ~30%.</span>
-                                    </li>
-                                    <li class="flex items-start text-slate-200">
-                                        <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm"></i>
-                                        <span>Improved cross-team workflow efficiency by ~25% through data pipeline
-                                            optimization.</span>
-                                    </li>
-                                </ul>
-                            </div>
+
+                            <ul class="space-y-3">
+                                <li class="flex items-start text-slate-200">
+                                    <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                    <span>Developed commercial forecasts + valuation models (NPV, IRR, scenario
+                                        analysis) across oncology, IBD, and rare diseases.</span>
+                                </li>
+                                <li class="flex items-start text-slate-200">
+                                    <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                    <span>Automated pipeline + clinical trial analytics, cutting insight delivery time
+                                        by ~30%.</span>
+                                </li>
+                                <li class="flex items-start text-slate-200">
+                                    <i class="fas fa-check text-teal-500 mt-1.5 mr-3 text-sm shrink-0"></i>
+                                    <span>Improved cross-team workflow efficiency by ~25% through data pipeline
+                                        optimization.</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -1340,6 +1566,44 @@
         </div>
     </section>
 
+    <!-- Awards and Recognition Section -->
+    <section id="awards" class="section-padding relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Awards & Recognition</h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                    Honors for professional excellence and contributions
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div
+                    class="award-card liquid-glass p-8 border border-teal-500/20 rounded-xl relative overflow-hidden group hover:border-teal-500/50 transition duration-300">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-teal-500/10 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110 duration-500">
+                    </div>
+
+                    <div
+                        class="flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left relative z-10">
+                        <div class="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fas fa-trophy text-3xl text-teal-400"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">IQVIA Impact Award</h3>
+                            <p class="text-teal-400 font-semibold mb-3">IQVIA</p>
+                            <p class="text-slate-300 leading-relaxed">
+                                Awarded for exceptional contributions to Learning & Development (L&D) initiatives and
+                                the successful delivery of innovative projects. Recognized for driving operational
+                                excellence and fostering a culture of continuous improvement within the team.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section-padding bg-slate-50 relative z-10">
         <div class="container mx-auto px-6">
@@ -1589,7 +1853,8 @@
                     });
                 },
                 {
-                    threshold: 0.5
+                    rootMargin: '0px 0px -90% 0px',
+                    threshold: 0
                 }
             );
 
